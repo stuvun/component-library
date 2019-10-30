@@ -29,3 +29,23 @@ storiesOf('Button', module)
         type="primary"
         large
     />)
+    .add('Large Danger', () => <Button
+        label="Do something"
+        type="danger"
+        large
+    />)
+    .add('Large Success', () => <Button
+        label="Do something"
+        type="success"
+        large
+    />)
+    .add('Large Warning', () => <Button
+        label="Do something"
+        type="warning"
+        large
+    />)
+    .add('Large Default', () => <Button
+        label="Do something"
+        type="default"
+        large
+    />)
