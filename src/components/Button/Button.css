@@ -1,0 +1,45 @@
+button {
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    padding: 5px 10px
+}
+
+button:focus {
+    outline: none
+}
+
+button:active {
+    outline-style: none;
+    opacity: 0.7;
+    transition: 0.1s ease;
+}
+
+.button-large {
+    padding: 10px 50px;
+}
+
+/* button:hover {
+    filter: brightness(70%);
+    transition: 0.1s ease;
+} */
+
+.button-primary {
+    background-color: #0069D9;
+    border: #0069D9
+}
+
+.button-danger {
+    background-color: rgb(237, 0, 54);
+    border: rgb(237, 0, 54)
+}
+
+.button-warning {
+    background-color: rgb(255, 195, 0);
+    border: rgb(255, 195, 0);
+    color: black
+}
+
+.button-success {
+    background-color: rgb(0, 178, 70);
+    border: rgb(0, 178, 70)
+}
