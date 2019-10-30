@@ -4,7 +4,7 @@ import './Button.css'
 // This is a functional component - just sent up a little differently as an arrow function!
 const Button = (props) => {
     let classList = ''
-    let types = [ 'primary', 'danger', 'success', 'warning' ]
+    let types = [ 'primary', 'danger', 'success', 'warning', 'default' ]
 
     if (types.includes(props.type)) {        // Conditionals for what style is returned based on property
         classList += ` button-${props.type}`

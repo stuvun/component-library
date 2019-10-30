@@ -1,7 +1,10 @@
 button {
     color: rgb(255, 255, 255);
     border-radius: 4px;
-    padding: 5px 10px
+    padding: 15px 30px;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 14px;
+    text-align: center;
 }
 
 button:focus {
@@ -24,22 +27,51 @@ button:active {
 } */
 
 .button-primary {
-    background-color: #0069D9;
-    border: #0069D9
+    background-color: #33A0FF;
+    border: #33A0FF
+}
+
+.button-primary:hover {
+    background-color: #2E90E5;
+    border: #2E90E5
 }
 
 .button-danger {
-    background-color: rgb(237, 0, 54);
-    border: rgb(237, 0, 54)
+    background-color: #FF4858;
+    border: #FF4858
+}
+
+.button-danger:hover {
+    background-color: #F53848;
+    border: #F53848
 }
 
 .button-warning {
-    background-color: rgb(255, 195, 0);
-    border: rgb(255, 195, 0);
-    color: black
+    background-color: #FFC600;
+    border: #FFC600;
+}
+
+.button-warning:hover {
+    background-color: #EBB600;
+    border: #EBB600;
 }
 
 .button-success {
-    background-color: rgb(0, 178, 70);
-    border: rgb(0, 178, 70)
+    background-color: #0AD00A;
+    border: #0AD00A
+}
+
+.button-success:hover {
+    background-color: #07C107;
+    border: #07C107
+}
+
+.button-default {
+    background-color: #22262A;
+    border: #22262A
+}
+
+.button-default:hover {
+    background-color: #13161A;
+    border: #13161A
 }

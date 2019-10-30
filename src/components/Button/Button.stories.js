@@ -5,23 +5,27 @@ import Button from './Button';
 
 storiesOf('Button', module)
     .add('Primary', () => <Button
-        label="Primary"
+        label="Do something"
         type="primary"
     />)
     .add('Danger', () => <Button
-        label="Danger"
+        label="Do something"
         type="danger"
     />)
     .add('Success', () => <Button
-        label="Success"
+        label="Do something"
         type="success"
     />)
     .add('Warning', () => <Button
-        label="Warning"
+        label="Do something"
         type="warning"
     />)
+    .add('Default', () => <Button
+        label="Do something"
+        type="default"
+    />)
     .add('Large Primary', () => <Button
-        label="Large"
+        label="Do something"
         type="primary"
         large
     />)
