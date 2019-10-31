@@ -1,5 +1,5 @@
 /* Default button */
-button {
+.default {
     color: #22262A;
     background-color: white;
     border: 2px solid #22262A;
@@ -10,22 +10,24 @@ button {
     text-align: center;
 }
 
-button:focus {
-    outline: none
-}
-
-button:hover {
+.default:hover {
     background-color: rgba(19, 22, 26, 0.1);
     border: 2px solid rgba(0, 0, 0, 0);
 }
 
-button:active {
+.default:active {
     outline-style: none;
     filter: brightness(70%);
     transition: 0.3s ease;
 }
 
-.button-large {
+button.defaultHollow:active {
+    outline-style: none;
+    filter: brightness(70%);
+    transition: 0.3s ease;
+}
+
+.default-large {
     padding: 22px 38px;
     font-size: 16px
 }

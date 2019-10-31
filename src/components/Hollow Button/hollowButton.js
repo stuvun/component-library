@@ -7,10 +7,10 @@ const HollowButton = (props) => {
     let types2 = [ 'primaryHollow', 'dangerHollow', 'successHollow', 'warningHollow', 'defaultHollow' ]
 
     if (types2.includes(props.type2)) {        // Conditionals for what style is returned based on property
-        classList2 += ` button-${props.type2}`
+        classList2 += ` button-${props.type2} default`
     }
     if (props.largeHollow) {
-        classList2 += ` button-large`
+        classList2 += ` button-large default`
     }
     return ( <button className={classList2}>
                 {props.label}
