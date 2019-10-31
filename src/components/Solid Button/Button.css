@@ -1,0 +1,58 @@
+/* Default button */
+button {
+    color: rgb(255, 255, 255);
+    background-color: #22262A;
+    border: 2px solid rgba(255, 255, 255, 0);
+    border-radius: 4px;
+    padding: 15px 30px;
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+button:focus {
+    outline: none
+}
+button:hover {
+    transition: 0.3s ease;
+}
+button:active {
+    outline-style: none;
+    filter: brightness(70%);
+    transition: 0.3s ease;
+}
+.button-large {
+    padding: 22px 38px;
+    font-size: 16px
+}
+
+/* Primary Button */
+.button-primary {
+    background-color: #33A0FF;
+}
+.button-primary:hover {
+    background-color: #2E90E5;
+}
+
+/* Danger Button */
+.button-danger {
+    background-color: #FF4858;
+}
+.button-danger:hover {
+    background-color: #F53848;
+}
+
+/* Warning Button */
+.button-warning {
+    background-color: #FFC600;
+}
+.button-warning:hover {
+    background-color: #EBB600;
+}
+
+/* Success button */
+.button-success {
+    background-color: #0AD00A;
+}
+.button-success:hover {
+    background-color: #07C107;
+}

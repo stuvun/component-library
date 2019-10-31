@@ -14,10 +14,6 @@ storiesOf('Button', module)
         type="primary"
         large
     />)
-    .add('Hollow Primary', () => <Button
-        label="Do something"
-        type="primary-hollow"
-    />)
     // Danger Button
     .add('Danger', () => <Button
         label="Do something"
@@ -27,10 +23,6 @@ storiesOf('Button', module)
         label="Do something"
         type="danger"
         large
-    />)
-    .add('Hollow Danger', () => <Button
-        label="Do something"
-        type="danger-hollow"
     />)
     // Success Button
     .add('Success', () => <Button
@@ -42,18 +34,10 @@ storiesOf('Button', module)
         type="success"
         large
     />)
-    .add('Hollow Success', () => <Button
-        label="Do something"
-        type="success-hollow"
-    />)
     // Warning Button
     .add('Warning', () => <Button
         label="Do something"
         type="warning"
-    />)
-    .add('Hollow Warning', () => <Button
-        label="Do something"
-        type="warning-hollow"
     />)
     .add('Large Warning', () => <Button
         label="Do something"
@@ -69,9 +53,5 @@ storiesOf('Button', module)
         label="Do something"
         type="default"
         large
-    />)
-    .add('Hollow Default', () => <Button
-        label="Do something"
-        type="default-hollow"
     />)
     
