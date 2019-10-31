@@ -1,4 +1,4 @@
-form {
+.form-text {
     margin: 5px auto;
 }
 
@@ -7,12 +7,28 @@ label {
     font-size: 14px;
     color: #22262A;
 }
+.email {
+    visibility: hidden;
+}
 
-input {
+.form-select .form-counter {
+    visibility: hidden;
+}
+
+.input-form-text {
     border: 2px solid #F1F3F4;
     border-radius: 4px;
     padding: 10px 150px 10px 15px;
     line-height: 16.8px;
+}
+
+
+.text {
+    visibility: hidden;
+}
+
+.select {
+    visibility: hidden;
 }
 
 ::placeholder {

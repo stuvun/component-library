@@ -1,24 +1,56 @@
 import React from 'react';
 import './Form.css'
+import { thisExpression } from '@babel/types';
 
-const Form = (props) => {
-    let classList = ''
-    let types = ['text', 'medium', 'large']
+class Form extends React.Component {
+    constructor(props){
+        super(props)
+        let counter = props.value
+        let classList = ''
+        let types = ['text', 'select', 'counter']
+        this.state = {
+            counter,
+            classList,
+            types
+        }
+        this.increaseCounter = this.increaseCounter.bind(this)
+    }
 
-    if (types.includes(props.type)) {
-        classList += ` form-${ props.type }`
+    increaseCounter() {
+        this.setState( currentState => ({
+            counter: currentState.counter + 1
+        }));
+        console.log(this.counter)
     }
-    if (props.medium) {
-        classList += ` form-medium`
+
+    decreaseCounter() {
+        this.setState( currentState => ({
+            counter: currentState.counter - 1
+        }));
     }
-    if (props.large) {
-        classList += ` form-large`
+    render () {
+        if (this.state.types.includes(this.props.type)) {
+            this.state.classList += ` form-${ this.props.types }`
+        }
+        if (this.props.medium) {
+            this.state.classList += ` form-medium`
+        }
+        if (this.props.large) {
+            this.state.classList += ` form-large`
+        }
+        return ( <label className={ this.props.classList }>{ this.props.label }
+                 <form className={ this.state.classList }>
+                     <input className={ this.state.classList } type={ this.props.type } placeholder={ this.props.label }/>
+                 </form>
+                 <div className='buttonContainer'>
+                    <button className={ this.props.display } placeholder={ this.props.label } onClick={ this.increaseCounter }/>
+                    { this.state.counter }
+                    <button className={ this.props.display } placeholder={ this.props.label } onClick={ this.decreaseCounter }/>
+                 </div>
+                 </label> )
     }
-    return ( <label>{ props.label }
-             <form className = { classList }>
-                 <input className= { classList } type = { props.type } placeholder={ props.label }/>
-             </form>
-             </label> )
 }
 
 export default Form;
+
+
