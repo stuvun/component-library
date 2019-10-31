@@ -1,0 +1,36 @@
+form {
+    margin: 5px auto;
+}
+
+label {
+    font-family: 'Proxima Nova', sans-serif;
+    font-size: 14px;
+    color: #22262A;
+}
+
+input {
+    border: 2px solid #F1F3F4;
+    border-radius: 4px;
+    padding: 10px 150px 10px 15px;
+    line-height: 16.8px;
+}
+
+::placeholder {
+    opacity: 50%;
+}
+
+input.form-medium {
+    padding: 15px 150px 15px 15px;
+}
+
+input.form-medium::placeholder {
+    font-size: 16px;
+}
+
+input.form-large {
+    padding: 22px 150px 22px 15px;
+}
+
+input.form-large::placeholder {
+    font-size: 16px;
+}
