@@ -34,13 +34,13 @@ button:active {
 .button-default-hollow {
     color: #22262A;
     background-color: white;
-    border: 2px solid #22262A
+    border: 2px solid #22262A;
 }
 
 .button-default-hollow:hover {
-    color: white;
-    background-color: #13161A;
-    border: 2px solid #13161A
+    background-color: rgba(19, 22, 26, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0);
+    color: black;
 }
 
 /* Primary Button */
@@ -61,9 +61,9 @@ button:active {
 }
 
 .button-primary-hollow:hover {
-    color: white;
-    background-color: #33A0FF;
-    border: 2px solid #33A0FF
+    color: #33A0FF;
+    background-color: rgba(51, 160, 255, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0);
 }
 
 /* Danger Button */
@@ -84,9 +84,9 @@ button:active {
 }
 
 .button-danger-hollow:hover {
-    color: white;
-    background-color: #FF4858;
-    border: 2px solid #FF4858
+    color: #FF4858;
+    background-color: rgba(255, 72, 87, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0);
 }
 
 /* Warning Button */
@@ -103,13 +103,13 @@ button:active {
 .button-warning-hollow {
     color: #FFC600;
     background-color: white;
-    border: 2px solid #FFC600
+    border: 2px solid #FFC600;
 }
 
 .button-warning-hollow:hover {
-    color: white;
-    background-color: #FFC600;
-    border: 2px solid #FFC600;
+    color: #FFC600;
+    background-color: rgba(255, 200, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0);
 }
 
 /* Success button */
@@ -130,7 +130,7 @@ button:active {
 }
 
 .button-success-hollow:hover {
-    color: white;
-    background-color: #0AD00A;
-    border: 2px solid #0AD00A
+    color: #0AD00A;
+    background-color: rgba(10, 208, 10, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0);
 }
