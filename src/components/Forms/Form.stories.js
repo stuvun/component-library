@@ -42,6 +42,9 @@ storiesOf('Form', module)
         label='Counter'
         type='counter'
         display='counts'
-        value={2}
+        value={0}
+        min={0}
+        max={10}
+        steps={2}
         large
     />)

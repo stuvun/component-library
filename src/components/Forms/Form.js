@@ -8,25 +8,35 @@ class Form extends React.Component {
         let counter = props.value
         let classList = ''
         let types = ['text', 'select', 'counter']
+        let min = this.props.value
+        let max = this.props.max
+        let steps = this.props.steps
         this.state = {
             counter,
             classList,
-            types
+            types,
+            min,
+            max,
+            steps
         }
         this.increaseCounter = this.increaseCounter.bind(this)
+        this.decreaseCounter = this.decreaseCounter.bind(this)
     }
 
     increaseCounter() {
-        this.setState( currentState => ({
-            counter: currentState.counter + 1
-        }));
-        console.log(this.counter)
+        if ( this.state.counter < this.state.max ) {
+            this.setState( currentState => ({
+                counter: currentState.counter + this.state.steps
+            }))
+        }
     }
 
     decreaseCounter() {
-        this.setState( currentState => ({
-            counter: currentState.counter - 1
-        }));
+        if ( this.state.counter < this.state.max ) {
+            this.setState( currentState => ({
+                counter: currentState.counter - this.state.steps
+            }))
+        }
     }
     render () {
         if (this.state.types.includes(this.props.type)) {
