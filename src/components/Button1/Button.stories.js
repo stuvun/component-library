@@ -4,6 +4,7 @@ import { storiesOf } from '@storybook/react';
 import Button from './Button';
 
 storiesOf('Button', module)
+    // Primary Button
     .add('Primary', () => <Button
         label="Do something"
         type="primary"
@@ -17,6 +18,7 @@ storiesOf('Button', module)
         type="primary"
         large
     />)
+    // Danger Button
     .add('Danger', () => <Button
         label="Do something"
         type="danger"
@@ -30,6 +32,7 @@ storiesOf('Button', module)
         type="danger"
         large
     />)
+    // Success Button
     .add('Success', () => <Button
         label="Do something"
         type="success"
@@ -43,6 +46,7 @@ storiesOf('Button', module)
         type="success"
         large
     />)
+    // Warning Button
     .add('Warning', () => <Button
         label="Do something"
         type="warning"
@@ -56,6 +60,7 @@ storiesOf('Button', module)
         type="warning"
         large
     />)
+    // Default Button
     .add('Default', () => <Button
         label="Do something"
         type="default"

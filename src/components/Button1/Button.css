@@ -1,5 +1,8 @@
+/* Default button */
 button {
     color: rgb(255, 255, 255);
+    background-color: #22262A;
+    border: 2px solid #22262A;
     border-radius: 4px;
     padding: 15px 30px;
     font-family: 'Proxima Nova', sans-serif;
@@ -11,10 +14,16 @@ button:focus {
     outline: none
 }
 
+button:hover {
+    background-color: #13161A;
+    border: 2px solid #13161A;
+    transition: 0.3s ease;
+}
+
 button:active {
     outline-style: none;
     filter: brightness(70%);
-    transition: 0.1s ease;
+    transition: 0.3s ease;
 }
 
 .button-large {
@@ -22,10 +31,19 @@ button:active {
     font-size: 16px
 }
 
-button:hover {
-    transition: 0.3s ease;
+.button-default-hollow {
+    color: #22262A;
+    background-color: white;
+    border: 2px solid #22262A
 }
 
+.button-default-hollow:hover {
+    color: white;
+    background-color: #13161A;
+    border: 2px solid #13161A
+}
+
+/* Primary Button */
 .button-primary {
     background-color: #33A0FF;
     border: 2px solid #33A0FF
@@ -48,6 +66,7 @@ button:hover {
     border: 2px solid #33A0FF
 }
 
+/* Danger Button */
 .button-danger {
     background-color: #FF4858;
     border: 2px solid #FF4858
@@ -70,6 +89,7 @@ button:hover {
     border: 2px solid #FF4858
 }
 
+/* Warning Button */
 .button-warning {
     background-color: #FFC600;
     border: 2px solid #FFC600;
@@ -92,6 +112,7 @@ button:hover {
     border: 2px solid #FFC600;
 }
 
+/* Success button */
 .button-success {
     background-color: #0AD00A;
     border: 2px solid #0AD00A
@@ -112,26 +133,4 @@ button:hover {
     color: white;
     background-color: #0AD00A;
     border: 2px solid #0AD00A
-}
-
-.button-default {
-    background-color: #22262A;
-    border: 2px solid #22262A
-}
-
-.button-default:hover {
-    background-color: #13161A;
-    border: 2px solid #13161A
-}
-
-.button-default-hollow {
-    color: #22262A;
-    background-color: white;
-    border: 2px solid #22262A
-}
-
-.button-default-hollow:hover {
-    color: white;
-    background-color: #13161A;
-    border: 2px solid #13161A
 }
