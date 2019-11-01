@@ -1,6 +1,5 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import downArrow from './downArrow.svg'
 
 import Form from './Form';
 

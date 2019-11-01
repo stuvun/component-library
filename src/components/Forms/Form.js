@@ -1,5 +1,6 @@
 import React from 'react';
 import './Form.css'
+import downArrow from './downArrow.svg'
 import { thisExpression } from '@babel/types';
 
 class Form extends React.Component {
@@ -11,7 +12,7 @@ class Form extends React.Component {
         let min = this.props.value
         let max = this.props.max
         let steps = this.props.steps
-        const svg = this.props.svg
+        const svg = downArrow
         this.state = {
             counter,
             classList,
@@ -19,6 +20,7 @@ class Form extends React.Component {
             min,
             max,
             steps,
+            svg
 
         }
         this.increaseCounter = this.increaseCounter.bind(this)
@@ -26,7 +28,7 @@ class Form extends React.Component {
     }
 
     increaseCounter() {
-        if ( this.state.counter < this.state.max ) {
+        if ( this.state.counter <= this.state.max - this.state.steps ) {
             this.setState( currentState => ({
                 counter: currentState.counter + this.state.steps
             }))
@@ -34,7 +36,7 @@ class Form extends React.Component {
     }
 
     decreaseCounter() {
-        if ( this.state.counter < this.state.max ) {
+        if ( this.state.counter > this.state.min && this.state.counter >= this.state.steps ){
             this.setState( currentState => ({
                 counter: currentState.counter - this.state.steps
             }))
@@ -53,7 +55,7 @@ class Form extends React.Component {
         if (this.props.downArrow) {
             this.state.classList += ` form-downArrow`
         }
-        if (this.props.display == 'selector') {
+        if (this.props.display == 'counts') {
             return ( <div className='buttonContainer'>
                         <button className={ this.props.display } placeholder={ this.props.label } onClick={ this.increaseCounter }/>
                         { this.state.counter }
