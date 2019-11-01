@@ -22,6 +22,27 @@ label {
     line-height: 16.8px;
 }
 
+.counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    width: 116px;
+    height: 46px;
+    border-radius: 4px;
+    transform: translate(865 720);
+    background: #F6F7F8;
+    user-select: none;
+}
+
+.plus {
+    padding: 10px;
+}
+
+.minus {
+    padding: 10px;
+}
 
 .text {
     visibility: hidden;

@@ -1,6 +1,9 @@
 import React from 'react';
-import './Form.css'
-import downArrow from './downArrow.svg'
+import './Form.css';
+import { ReactComponent as Down } from './downArrow.svg';
+import { ReactComponent as Minus } from './minus.svg';
+import { ReactComponent as Plus } from './plus.svg';
+import { ReactComponent as CounterIcon } from './counterIcon.svg';
 import { thisExpression } from '@babel/types';
 
 class Form extends React.Component {
@@ -9,10 +12,9 @@ class Form extends React.Component {
         let counter = props.value
         let classList = ''
         let types = ['text', 'select', 'counter']
-        let min = this.props.value
-        let max = this.props.max
-        let steps = this.props.steps
-        const svg = downArrow
+        const min = this.props.value
+        const max = this.props.max
+        const steps = this.props.steps
         this.state = {
             counter,
             classList,
@@ -20,8 +22,9 @@ class Form extends React.Component {
             min,
             max,
             steps,
-            svg
-
+            Minus,
+            Plus,
+            CounterIcon
         }
         this.increaseCounter = this.increaseCounter.bind(this)
         this.decreaseCounter = this.decreaseCounter.bind(this)
@@ -56,10 +59,10 @@ class Form extends React.Component {
             this.state.classList += ` form-downArrow`
         }
         if (this.props.display == 'counts') {
-            return ( <div className='buttonContainer'>
-                        <button className={ this.props.display } placeholder={ this.props.label } onClick={ this.increaseCounter }/>
-                        { this.state.counter }
-                        <button className={ this.props.display } placeholder={ this.props.label } onClick={ this.decreaseCounter }/>
+            return ( <div className='counter'>
+                     <Minus className='minus' onClick={ this.decreaseCounter }/>
+                     { this.state.counter }
+                     <Plus className='plus' onClick={ this.increaseCounter }/>
                      </div>
             )
         }
