@@ -1,6 +1,5 @@
 import React from 'react';
 import './Form.css';
-import { ReactComponent as Down } from './downArrow.svg';
 import { ReactComponent as Minus } from './minus.svg';
 import { ReactComponent as Plus } from './plus.svg';
 import { ReactComponent as CounterIcon } from './counterIcon.svg';
@@ -55,9 +54,6 @@ class Form extends React.Component {
         if (this.props.large) {
             this.state.classList += ` form-large`
         }
-        if (this.props.downArrow) {
-            this.state.classList += ` form-downArrow`
-        }
         if (this.props.display == 'counts') {
             return ( <div className='counter'>
                      <Minus className='minus' onClick={ this.decreaseCounter }/>
@@ -66,7 +62,18 @@ class Form extends React.Component {
                      </div>
             )
         }
-        return ( <label className={ this.props.classList }>{ this.props.label }
+        if (this.props.display == 'selector') {
+            if (this.props.medium) {
+                this.state.classList += ` select-medium`
+            }
+            if (this.props.large) {
+                this.state.classList += ` select-large`
+            }
+            return ( <select className={ this.state.classList }>
+                         <option>{ this.props.label }</option>
+                     </select> )
+        }
+        return ( <label className={ this.state.classList }>{ this.props.label }
                  <form className={ this.state.classList }>
                      <input className={ this.state.classList } type={ this.props.type } placeholder={ this.props.label }/>
                  </form>

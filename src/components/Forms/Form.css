@@ -1,25 +1,45 @@
-.form-text {
-    margin: 5px auto;
+* {
+    font-family: 'Proxima Nova', sans-serif;
+    outline: none;
 }
 
 label {
-    font-family: 'Proxima Nova', sans-serif;
     font-size: 14px;
     color: #22262A;
 }
-.email {
-    visibility: hidden;
-}
 
-.form-select .form-counter {
-    visibility: hidden;
-}
-
-.input-form-text {
+input {
     border: 2px solid #F1F3F4;
     border-radius: 4px;
     padding: 10px 150px 10px 15px;
     line-height: 16.8px;
+}
+
+form {
+    margin: 5px auto;
+}
+
+select {
+    display: inline-block;
+    font-size: 14px;
+    color: #22262A;
+    fill: none;
+    width: 200px;
+    height: 38px;
+    border: 2px solid #F1F3F4;
+    border-radius: 4px;
+    padding: 0 10px;
+    background-image: none
+}
+
+.select-medium {
+    width: 300px;
+    height: 46px;
+}
+
+.select-large {
+    width: 300px;
+    height: 60px;
 }
 
 .counter {

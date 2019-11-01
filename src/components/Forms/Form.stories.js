@@ -25,13 +25,11 @@ storiesOf('Form', module)
         label='Select'
         type='select'
         display='selector'
-        svg='downArrow'
     />)
     .add('Select Medium', () => <Form
         label='Select'
         type='select'
         display='selector'
-        svg='downArrow'
         medium
     />)
     .add('Select Large', () => <Form
@@ -39,7 +37,6 @@ storiesOf('Form', module)
         type='select'
         display='selector'
         large
-        downArrow
     />)
     .add('Counter', () => <Form
         label='Counter'
