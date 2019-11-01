@@ -29,7 +29,12 @@ select {
     border: 2px solid #F1F3F4;
     border-radius: 4px;
     padding: 0 10px;
-    background-image: none
+    background-color: white;
+}
+
+.select-filled {
+    background-color: #FAFAFB;
+    border: 2px solid #FAFAFB;
 }
 
 .select-medium {

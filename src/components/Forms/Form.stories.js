@@ -38,6 +38,26 @@ storiesOf('Form', module)
         display='selector'
         large
     />)
+    .add('Select (Filled)', () => <Form
+        label='Select'
+        type='select'
+        display='selector'
+        filled
+    />)
+    .add('Select Medium (Filled)', () => <Form
+        label='Select'
+        type='select'
+        display='selector'
+        medium
+        filled
+    />)
+    .add('Select Large (Filled)', () => <Form
+        label='Select'
+        type='select'
+        display='selector'
+        large
+        filled
+    />)
     .add('Counter', () => <Form
         label='Counter'
         type='counter'
@@ -47,4 +67,20 @@ storiesOf('Form', module)
         max={10}
         steps={2}
         large
+    />)
+    .add('Redeem', () => <Form
+        label='Voucher code'
+        type='redeem'
+        display='redeemer'
+    />)
+    .add('Checkbox', () => <Form
+        type='check'
+        display='checkbox'
+        check='black'
+    />)
+    .add('Checkbox (Blue)', () => <Form
+        type='check'
+        display='checkbox'
+        blue
+        check='blue'
     />)

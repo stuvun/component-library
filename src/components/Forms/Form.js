@@ -3,6 +3,11 @@ import './Form.css';
 import { ReactComponent as Minus } from './minus.svg';
 import { ReactComponent as Plus } from './plus.svg';
 import { ReactComponent as CounterIcon } from './counterIcon.svg';
+import { ReactComponent as Checkbox } from './checkboxBlack.svg';
+import { ReactComponent as Uncheckedbox } from './Uncheckedbox.svg';
+import { ReactComponent as Checkboxblue } from './checkboxBlue.svg';
+import { ReactComponent as Uncheckedboxblue } from './Uncheckedboxblue.svg';
+import { ReactComponent as Select } from './Select.svg';
 import { thisExpression } from '@babel/types';
 
 class Form extends React.Component {
@@ -11,6 +16,7 @@ class Form extends React.Component {
         let counter = props.value
         let classList = ''
         let types = ['text', 'select', 'counter']
+        let displaysList = ['black', 'blue']
         const min = this.props.value
         const max = this.props.max
         const steps = this.props.steps
@@ -23,10 +29,17 @@ class Form extends React.Component {
             steps,
             Minus,
             Plus,
-            CounterIcon
+            CounterIcon,
+            Checkbox,
+            Uncheckedbox,
+            Checkboxblue,
+            Uncheckedboxblue,
+            displaysList
         }
         this.increaseCounter = this.increaseCounter.bind(this)
         this.decreaseCounter = this.decreaseCounter.bind(this)
+        this.handleCheck = this.handleCheck.bind(this)
+        this.handleUncheck = this.handleUncheck.bind(this)
     }
 
     increaseCounter() {
@@ -44,7 +57,26 @@ class Form extends React.Component {
             }))
         }
     }
-    render () {
+
+    handleCheck() {
+        if ( this.props.blue ) {
+            this.state.displaysList -= ` blue`
+            return ( <Checkboxblue onClick={ this.handleUncheck }/>)
+        }
+        this.state.displaysList -= ` black`
+        return ( <Checkbox onClick={ this.handleUnchek }/> )
+    }
+
+    handleUncheck() {
+        if ( this.props.blue ) {
+            this.state.displaysList += ` blue`
+            return ( <Checkboxblue onClick={ this.handleCheck }/>)
+        }
+        this.state.displaysList += ` black`
+        return ( <Checkbox onClick={ this.handleCheck }/> )
+    }
+
+    render() {
         if (this.state.types.includes(this.props.type)) {
             this.state.classList += ` form-${ this.props.types }`
         }
@@ -69,9 +101,18 @@ class Form extends React.Component {
             if (this.props.large) {
                 this.state.classList += ` select-large`
             }
+            if (this.props.filled) {
+                this.state.classList += ` select-filled`
+            }
             return ( <select className={ this.state.classList }>
                          <option>{ this.props.label }</option>
                      </select> )
+        }
+        if (this.props.display == 'checkbox') {
+            if (this.props.blue) {
+                return ( <Checkboxblue onClick={ this.handleUncheck }/> )
+            }
+            return ( <Checkbox className={ this.props.check } onClick={ this.handleUncheck }/>)
         }
         return ( <label className={ this.state.classList }>{ this.props.label }
                  <form className={ this.state.classList }>
