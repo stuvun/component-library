@@ -11,13 +11,15 @@ class Form extends React.Component {
         let min = this.props.value
         let max = this.props.max
         let steps = this.props.steps
+        const svg = this.props.svg
         this.state = {
             counter,
             classList,
             types,
             min,
             max,
-            steps
+            steps,
+
         }
         this.increaseCounter = this.increaseCounter.bind(this)
         this.decreaseCounter = this.decreaseCounter.bind(this)
@@ -48,15 +50,21 @@ class Form extends React.Component {
         if (this.props.large) {
             this.state.classList += ` form-large`
         }
+        if (this.props.downArrow) {
+            this.state.classList += ` form-downArrow`
+        }
+        if (this.props.display == 'selector') {
+            return ( <div className='buttonContainer'>
+                        <button className={ this.props.display } placeholder={ this.props.label } onClick={ this.increaseCounter }/>
+                        { this.state.counter }
+                        <button className={ this.props.display } placeholder={ this.props.label } onClick={ this.decreaseCounter }/>
+                     </div>
+            )
+        }
         return ( <label className={ this.props.classList }>{ this.props.label }
                  <form className={ this.state.classList }>
                      <input className={ this.state.classList } type={ this.props.type } placeholder={ this.props.label }/>
                  </form>
-                 <div className='buttonContainer'>
-                    <button className={ this.props.display } placeholder={ this.props.label } onClick={ this.increaseCounter }/>
-                    { this.state.counter }
-                    <button className={ this.props.display } placeholder={ this.props.label } onClick={ this.decreaseCounter }/>
-                 </div>
                  </label> )
     }
 }
