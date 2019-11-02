@@ -17,6 +17,7 @@ class Form extends React.Component {
         let classList = ''
         let types = ['text', 'select', 'counter']
         let displaysList = ['black', 'blue']
+        let display = this.props.display
         const min = this.props.value
         const max = this.props.max
         const steps = this.props.steps
@@ -34,7 +35,8 @@ class Form extends React.Component {
             Uncheckedbox,
             Checkboxblue,
             Uncheckedboxblue,
-            displaysList
+            displaysList,
+            display
         }
         this.increaseCounter = this.increaseCounter.bind(this)
         this.decreaseCounter = this.decreaseCounter.bind(this)
@@ -107,6 +109,12 @@ class Form extends React.Component {
             return ( <select className={ this.state.classList }>
                          <option>{ this.props.label }</option>
                      </select> )
+        }
+        if (this.props.display == 'redeemer') {
+            return ( <form className={this.props.type}>
+                        <input className={ this.state.display } placeholder={ this.props.label }/>
+                        <button className={ this.state.display }><span>{ this.props.span }</span></button>
+                     </form>)
         }
         if (this.props.display == 'checkbox') {
             if (this.props.blue) {

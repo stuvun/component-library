@@ -96,3 +96,20 @@ input.form-large {
 input.form-large::placeholder {
     font-size: 16px;
 }
+
+.redeem {
+    display: flex;
+    flex-direction: row;
+    border: 2px;
+}
+
+.redeemer {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-top
+}
+
+button.redeemer {
+    background: blue;
+
+}

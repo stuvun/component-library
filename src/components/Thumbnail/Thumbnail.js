@@ -35,10 +35,10 @@ class Thumbnail extends React.Component {
 
     render() {
         return (
-          <div className={ this.props.type }>
+          <div className={ this.state.types }>
                <img src={ thumbMac } onMouseEnter={ this.handleEnter }/>
                <Divider />
-               { this.props.label }
+               { this.state.label }
                <Stars />
                <Price />
           </div>  
