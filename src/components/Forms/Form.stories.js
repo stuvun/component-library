@@ -74,6 +74,13 @@ storiesOf('Form', module)
         display='redeemer'
         span='Redeem'
     />)
+    .add('Redeem Large', () => <Form
+        label='Voucher code'
+        type='redeem'
+        display='redeemer'
+        span='Redeem'
+        large
+    />)
     .add('Checkbox', () => <Form
         type='check'
         display='checkbox'

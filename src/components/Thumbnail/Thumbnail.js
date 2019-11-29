@@ -12,36 +12,34 @@ class Thumbnail extends React.Component {
         let classList = ''
         let types = props.type
         let label = props.label
+        let src = thumbMac
         this.state = {
             classList,
             types,
-            label
+            label,
+            src,
         }
-        this.handleEnter = this.handleEnter.bind(this)
-        this.handleLeave = this.handleLeave.bind(this)
     }
-
-    handleEnter() {
-        return (
-            <img src={ hoverMac } onMouseLeave={ this.handleLeave }/>
-        )
+    hoverHandler = () => {
+        this.setState({ src: hoverMac })
     }
-
-    handleLeave() {
-        return (
-            <img src={ thumbMac } onMouseLeave={ this.handleEnter }/>
-        )
+    exitHandler = () => {
+        this.setState({ src: thumbMac })
     }
-
     render() {
         return (
-          <div className={ this.state.types }>
-               <img src={ thumbMac } onMouseEnter={ this.handleEnter }/>
-               <Divider />
-               { this.state.label }
-               <Stars />
-               <Price />
-          </div>  
+            <div className={ this.state.types }>
+                <img
+                    className="thumb"
+                    src={ this.state.src }
+                    onMouseEnter={ this.hoverHandler }
+                    onMouseLeave={ this.exitHandler }
+                />
+                <Divider />
+                { this.state.label }
+                <Stars />
+                <Price />
+            </div>  
         ) 
     }
 }

@@ -111,6 +111,13 @@ class Form extends React.Component {
                      </select> )
         }
         if (this.props.display == 'redeemer') {
+            if (this.props.large) {
+                this.state.classList += ` -large`
+                return ( <form className={this.props.type}>
+                        <input className={ this.state.display } placeholder={ this.props.label }/>
+                        <button className={ this.state.display }><span>{ this.props.span }</span></button>
+                     </form>)
+            }
             return ( <form className={this.props.type}>
                         <input className={ this.state.display } placeholder={ this.props.label }/>
                         <button className={ this.state.display }><span>{ this.props.span }</span></button>
