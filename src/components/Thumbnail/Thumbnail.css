@@ -9,3 +9,37 @@
     border-radius: 4px;
     font-size: 14px;
 }
+
+.filled {
+    background-color: #FAFAFB;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 570px;
+    height: 224px;
+    border: 3px solid #FAFAFB;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.row:hover {
+    background-color: #FAFAFB;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 425px;
+}
+
+.detailContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 98px;
+}

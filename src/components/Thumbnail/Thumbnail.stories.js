@@ -3,17 +3,19 @@ import { storiesOf } from '@storybook/react';
 import Thumbnail from './Thumbnail';
 
 storiesOf ('Thumbnail', module)
-    .add('Block', () => <Thumbnail
+    .add('Outline Block', () => <Thumbnail
         label='Apple Macbook Pro'
         type='thumbnail'
-        stacked
         />)
-    .add('Block', () => <Thumbnail
+    .add('Filled Block', () => <Thumbnail
         label='Apple Macbook Pro'
-        type='thumbnail'
-        beside
+        type='thumbnail filled'
         />)
-    .add('Block', () => <Thumbnail
+    .add('Outline Row', () => <Thumbnail
         label='Apple Macbook Pro'
-        type='thumbnail'
+        type='thumbnail row'
+        />)
+    .add('Filled Row', () => <Thumbnail
+        label='Apple Macbook Pro'
+        type='thumbnail filled row'
         />)
