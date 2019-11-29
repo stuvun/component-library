@@ -5,7 +5,9 @@ import { ReactComponent as Divider } from './divider.svg';
 import hoverMac from './Overlay.png';
 import hoverMacBlue from './OverlayBlue.png';
 import thumbMac from './ThumbnailMac.png';
+import beats from "./Beats.png";
 import './Thumbnail.css';
+import { throwStatement } from '@babel/types';
 
 class Thumbnail extends React.Component {
     constructor(props) {
@@ -64,6 +66,22 @@ class Thumbnail extends React.Component {
                         </div>
                     </div>
                 </div>  
+            )
+        } else if (this.props.type === "thumbnail beats") {
+            return (
+                <div className="beats">
+                    <div className="contentContainer">
+                        <img
+                            className="thumb"
+                            src={ beats }
+                        />
+                        <div className="detailContainer beats">
+                            { this.state.label }
+                            <Stars />
+                            <Price />
+                        </div>
+                    </div>
+                </div>
             )
         }
     }

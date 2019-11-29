@@ -25,6 +25,15 @@
     font-size: 14px;
 }
 
+.beats {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 450px;
+    height: 158px;
+    font-size: 14px;
+}
+
 .row:hover {
     background-color: #FAFAFB;
 }
@@ -42,4 +51,8 @@
     flex-direction: column;
     justify-content: space-between;
     height: 98px;
+}
+
+.beats {
+    width: 134px;
 }
