@@ -19,7 +19,7 @@ storiesOf ('Thumbnail', module)
         label='Apple Macbook Pro'
         type='thumbnail filled row'
         />)
-    .add('Beats Thumb', () => <Thumbnail
+    .add('Beats', () => <Thumbnail
         label='Beats Solo 2 On Ear Headphones - Black'
         type='thumbnail beats'
         />)
