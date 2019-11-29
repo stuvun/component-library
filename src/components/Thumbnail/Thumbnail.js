@@ -1,18 +1,21 @@
-import React from 'react';
-import { ReactComponent as Stars } from './stars.svg';
-import { ReactComponent as Price } from './price.svg';
-import { ReactComponent as Divider } from './divider.svg';
-import hoverMac from './Overlay.png';
-import hoverMacBlue from './OverlayBlue.png';
-import thumbMac from './ThumbnailMac.png';
+import React from "react";
+import { ReactComponent as Stars } from "./stars.svg";
+import { ReactComponent as Price } from "./price.svg";
+import { ReactComponent as Divider } from "./divider.svg";
+import { ReactComponent as Divider2 } from "./divider2.svg";
+import { ReactComponent as Reviews } from "./inlineReviews.svg"
+import { ReactComponent as Cart } from "./Cart.svg";
+import hoverMac from "./Overlay.png";
+import hoverMacBlue from "./OverlayBlue.png";
+import thumbMac from "./ThumbnailMac.png";
 import beats from "./Beats.png";
-import './Thumbnail.css';
-import { throwStatement } from '@babel/types';
+import inline from "./InlineMac.png";
+import "./Thumbnail.css";
 
 class Thumbnail extends React.Component {
     constructor(props) {
         super(props)
-        let classList = ''
+        let classList = ""
         let types = this.props.type
         let label = this.props.label
         let src = thumbMac
@@ -79,6 +82,30 @@ class Thumbnail extends React.Component {
                             { this.state.label }
                             <Stars />
                             <Price />
+                        </div>
+                    </div>
+                </div>
+            )
+        } else if (this.props.type === "thumbnail inline") {
+            return (
+                <div className={ this.state.types }>
+                    <div className="inlineContainer">
+                        <img
+                            className="thumb"
+                            src={ inline }
+                            onMouseEnter={ this.hoverHandler }
+                            onMouseLeave={ this.exitHandler }
+                        />
+                        <div className="inlineDetails">
+                            { this.state.label }
+                            <Reviews />
+                            <Divider2 />
+                            <Price />
+                            <span className="summary">Nunc facilisis sagittis ullamcorper. Proin lectus ipsum, gravida et mattis vulputate, tristique
+                                <br/>ut lectus. Sed et lectus lorem nunc leifend laorevtr istique et congue. Vivamus adipiscin
+                                <br/>vulputate g nisl ut dolor ...
+                            </span>
+                            <Cart />
                         </div>
                     </div>
                 </div>

@@ -23,3 +23,7 @@ storiesOf ('Thumbnail', module)
         label='Beats Solo 2 On Ear Headphones - Black'
         type='thumbnail beats'
         />)
+    .add('Inline', () => <Thumbnail
+        label='Apple Macbook Pro'
+        type='thumbnail inline'
+        />)
