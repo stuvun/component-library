@@ -1,26 +1,26 @@
-import React from 'react';
-import './Form.css';
-import { ReactComponent as Minus } from './minus.svg';
-import { ReactComponent as Plus } from './plus.svg';
-import { ReactComponent as CounterIcon } from './counterIcon.svg';
-import { ReactComponent as Checkbox } from './checkboxBlack.svg';
-import { ReactComponent as Uncheckedbox } from './Uncheckedbox.svg';
-import { ReactComponent as Checkboxblue } from './checkboxBlue.svg';
-import { ReactComponent as Uncheckedboxblue } from './Uncheckedboxblue.svg';
-import { ReactComponent as Select } from './Select.svg';
-import { thisExpression } from '@babel/types';
+import React from "react";
+import "./Form.css";
+import { ReactComponent as Minus } from "./minus.svg";
+import { ReactComponent as Plus } from "./plus.svg";
+import { ReactComponent as CounterIcon } from "./counterIcon.svg";
+import { ReactComponent as Checkbox } from "./checkboxBlack.svg";
+import { ReactComponent as Uncheckedbox } from "./Uncheckedbox.svg";
+import { ReactComponent as Checkboxblue } from "./checkboxBlue.svg";
+import { ReactComponent as Uncheckedboxblue } from "./Uncheckedboxblue.svg";
+import { ReactComponent as Select } from "./Select.svg";
 
 class Form extends React.Component {
     constructor(props){
         super(props)
         let counter = props.value
-        let classList = ''
-        let types = ['text', 'select', 'counter']
-        let displaysList = ['black', 'blue']
+        let classList = ""
+        let types = ["text", "select", "counter"]
+        let displaysList = ["black", "blue"]
         let display = this.props.display
         const min = this.props.value
         const max = this.props.max
         const steps = this.props.steps
+        const checked = this.props.checked
         this.state = {
             counter,
             classList,
@@ -31,20 +31,12 @@ class Form extends React.Component {
             Minus,
             Plus,
             CounterIcon,
-            Checkbox,
-            Uncheckedbox,
-            Checkboxblue,
-            Uncheckedboxblue,
+            checked,
             displaysList,
             display
         }
-        this.increaseCounter = this.increaseCounter.bind(this)
-        this.decreaseCounter = this.decreaseCounter.bind(this)
-        this.handleCheck = this.handleCheck.bind(this)
-        this.handleUncheck = this.handleUncheck.bind(this)
     }
-
-    increaseCounter() {
+    increaseCounter = () => {
         if ( this.state.counter <= this.state.max - this.state.steps ) {
             this.setState( currentState => ({
                 counter: currentState.counter + this.state.steps
@@ -52,7 +44,7 @@ class Form extends React.Component {
         }
     }
 
-    decreaseCounter() {
+    decreaseCounter = () => {
         if ( this.state.counter > this.state.min && this.state.counter >= this.state.steps ){
             this.setState( currentState => ({
                 counter: currentState.counter - this.state.steps
@@ -60,22 +52,12 @@ class Form extends React.Component {
         }
     }
 
-    handleCheck() {
-        if ( this.props.blue ) {
-            this.state.displaysList -= ` blue`
-            return ( <Checkboxblue onClick={ this.handleUncheck }/>)
+    handleCheck = () => {
+        if (this.state.checked === "false") {
+            this.setState({ checked: "true" })
+        } else if (this.state.checked === "true") {
+            this.setState({ checked: "false"})
         }
-        this.state.displaysList -= ` black`
-        return ( <Checkbox onClick={ this.handleUnchek }/> )
-    }
-
-    handleUncheck() {
-        if ( this.props.blue ) {
-            this.state.displaysList += ` blue`
-            return ( <Checkboxblue onClick={ this.handleCheck }/>)
-        }
-        this.state.displaysList += ` black`
-        return ( <Checkbox onClick={ this.handleCheck }/> )
     }
 
     render() {
@@ -88,15 +70,15 @@ class Form extends React.Component {
         if (this.props.large) {
             this.state.classList += ` form-large`
         }
-        if (this.props.display == 'counts') {
-            return ( <div className='counter'>
-                     <Minus className='minus' onClick={ this.decreaseCounter }/>
+        if (this.props.display == "counts") {
+            return ( <div className="counter">
+                     <Minus className="minus" onClick={ this.decreaseCounter }/>
                      { this.state.counter }
-                     <Plus className='plus' onClick={ this.increaseCounter }/>
+                     <Plus className="plus" onClick={ this.increaseCounter }/>
                      </div>
             )
         }
-        if (this.props.display == 'selector') {
+        if (this.props.display == "selector") {
             if (this.props.medium) {
                 this.state.classList += ` select-medium`
             }
@@ -110,24 +92,32 @@ class Form extends React.Component {
                          <option>{ this.props.label }</option>
                      </select> )
         }
-        if (this.props.display == 'redeemer') {
+        if (this.props.display == "redeemer") {
             if (this.props.large) {
-                this.state.classList += ` -large`
-                return ( <form className={this.props.type}>
-                        <input className={ this.state.display } placeholder={ this.props.label }/>
-                        <button className={ this.state.display }><span>{ this.props.span }</span></button>
+                return ( <form className="redeem-large">
+                        <input className="redeemer-large" placeholder={ this.props.label }/>
+                        <button className="redeemer-large"><span>{ this.props.span }</span></button>
                      </form>)
             }
             return ( <form className={this.props.type}>
-                        <input className={ this.state.display } placeholder={ this.props.label }/>
-                        <button className={ this.state.display }><span>{ this.props.span }</span></button>
+                        <input className={ this.props.display } placeholder={ this.props.label }/>
+                        <button className={ this.props.display }><span>{ this.props.span }</span></button>
                      </form>)
         }
-        if (this.props.display == 'checkbox') {
+        if (this.props.display == "checkbox") {
             if (this.props.blue) {
-                return ( <Checkboxblue onClick={ this.handleUncheck }/> )
+                if (this.state.checked === "false") {
+                    return <Uncheckedboxblue onClick={ this.handleCheck}/>
+                } else if (this.state.checked === "true") {
+                    return <Checkboxblue onClick={ this.handleCheck}/>
+                }
+            } else {
+                if (this.state.checked === "false") {
+                    return <Uncheckedbox onClick={ this.handleCheck}/>
+                } else if (this.state.checked === "true") {
+                    return <Checkbox onClick={ this.handleCheck }/>
+                }
             }
-            return ( <Checkbox className={ this.props.check } onClick={ this.handleUncheck }/>)
         }
         return ( <label className={ this.state.classList }>{ this.props.label }
                  <form className={ this.state.classList }>

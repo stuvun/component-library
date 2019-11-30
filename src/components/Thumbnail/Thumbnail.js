@@ -29,7 +29,11 @@ class Thumbnail extends React.Component {
     hoverHandler = () => {
         if (this.props.type === "thumbnail") {
             this.setState({ src: hoverMac })
-        } else if (this.props.type === "thumbnail filled" || this.props.type === "thumbnail row" || this.props.type === "thumbnail filled row") {
+        } else if (
+            this.props.type === "thumbnail filled" ||
+            this.props.type === "thumbnail row" ||
+            this.props.type === "thumbnail filled row"
+        ) {
             this.setState({ src: hoverMacBlue })
         }
     }
