@@ -1,6 +1,6 @@
 # Component Library
 
-![intro](Storybook\ Example.png)
+![intro](https://github.com/stuvun/component-library/blob/master/Storybook%20Example.png)
 
 This is my component library made with Storybook! It includes a sample of many react.js components that I've put together to showcase as a mini portfolio.
 
