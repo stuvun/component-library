@@ -32,3 +32,4 @@ You're all set! Enjoy!
 * Deployed Site: https://stuvun-storybook.netlify.com
 * Project Repository: https://github.com/component-library
 * Issues: https://github.com/component-library/issues
+* Published Library: https://www.npmjs.com/package/stuvun-component-library
